@@ -1,3 +1,5 @@
+
+<?php if($id == SESSION('id')) { ?>
 <center><div>
 		<form action="<?php print get('webURL')._sh.'boom/crearAlbum/'.$id ?>" method="post">
 	<input type="text" placeholder="Nombre del Album" name="nombre">&nbsp;
@@ -5,6 +7,7 @@
 </form>
 
 </div></center>
+<?php } ?>
 
 <hr><h3>ÁLBUMES</h3><hr>
 <table>

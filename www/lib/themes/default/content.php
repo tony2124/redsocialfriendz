@@ -7,6 +7,7 @@
 		include "mobile/content.php";
 	} else {
 ?>
+
 <div style="width:100%">
 	<div >
 		<div >
@@ -22,22 +23,17 @@
 		       
 				           
 					              <li><strong>Grupos</strong></li>
-					              <li><a href="#">Instituto tecnológico</a></li>
-					              <li><a href="#">Clubes de ciencia</a></li>
-					              <li><a href="#">Sistemas generación</a></li>		        
+					              <?php if($grupos!=NULL) foreach ($grupos as $grupo) { ?>
+						<p><a href="<?php print get('webURL')._sh.'boom/grupos/'.$grupo['id_grupo'] ?>"><?php print $grupo['nombre_grupo'] ?></a></p>
+					<?php } ?>		        
 					              <li><strong>Amigos recientes</strong></li>
 					              <?php foreach ($amigos as $amigo ) { ?>
+					             <a href="<?php print get('webURL')._sh.'boom/perfil/'.$amigo['id_usuario'] ?>">
 					              <img class="animacion" style="margin-left: 5px; margin-top: 5px;" src="<?php print get('webURL')._sh.'www/lib/images/usuarios/'.$amigo['foto'] ?>" width="40" height="40">	
+					              </a>
 					              <?php } ?>
 					              
-					              <!--<img style="margin-left: 5px; margin-top: 5px;" src="" width="40" height="40">
-					              <img style="margin-left: 5px; margin-top: 5px;" src="" width="40" height="40">
-					              <img style="margin-left: 5px; margin-top: 5px;" src="" width="40" height="40">
-					              <img style="margin-left: 5px; margin-top: 5px;" src="" width="40" height="40">
-					              <img style="margin-left: 5px; margin-top: 5px;" src="" width="40" height="40">
-					              <img style="margin-left: 5px; margin-top: 5px;" src="" width="40" height="40">
-					              <img style="margin-left: 5px; margin-top: 5px;" src="" width="40" height="40">-->
-		             
+					             
 		            		</ul>
 
 						</div>

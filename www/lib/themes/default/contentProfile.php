@@ -7,11 +7,13 @@
 		include "mobile/content.php";
 	} else {
 ?>
+
 <div style="width:100%">
 			<div>
 				<div style="padding:20px; float:left" >
 					<img  width="200" height="200" src="<?php print path("www/lib/images/usuarios/".$foto['foto'],true) ?>" >
 		          
+
 		          </div><!--/.well -->
 			</div>
 
