@@ -8,10 +8,12 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<title><?php print $this->getTitle(); ?></title>
-		
-		<link href="<?php print path("vendors/css/frameworks/bootstrap/css/bootstrap.min.css", "zan"); ?>" rel="stylesheet">
-		<script type="text/javascript" src="<?php print path("vendors/js/jquery-1.7.1.min.js", "zan"); ?>"></script>
-		<script type="text/javascript" src="<?php print path("vendors/css/frameworks/bootstrap/js/bootstrap.min.js", "zan"); ?>"></script>
+		<link href="<?php print path("vendors/css/frameworks/foundation/stylesheets/foundation.css", "zan"); ?>" rel="stylesheet">
+		<link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet">
+		<script type="text/javascript" src="<?php print path("vendors/css/frameworks/foundation/javascripts/modernizr.foundation.js", "zan"); ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/css/frameworks/foundation/javascripts/jquery.min.js", "zan"); ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/css/frameworks/foundation/javascripts/foundation.js", "zan"); ?>"></script>
+		<script type="text/javascript" src="<?php print path("vendors/css/frameworks/foundation/javascripts/app.js", "zan"); ?>"></script>
 
 		<link href="<?php print $this->themePath; ?>/css/style.css" rel="stylesheet">
 
@@ -19,39 +21,32 @@
 
 	<body>
 		<?php if(SESSION('nombre')) { ?>
-<div class="navbar navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container-fluid">
-      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </a>
-      <a class="brand" href="#"><img src="<?php print path("www/lib/images/BOOM.jpg",true); ?>" width="25" height="25">&nbsp;Boom!</a>
+<div class="cabecera">   
+    &nbsp;<span style="color:white;"><strong>FrendZ!</strong></span>
 	  
-	<div class="btn-group pull-right">
-		<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-		 <i class="icon-user"></i> <?php print SESSION('nombre').' '.SESSION('apellidos') ?>
-	          <span class="caret"></span>
-	        </a>
-	        <ul class="dropdown-menu">
-	          <li><a href="<?php print get('webURL')._sh.'boom/configuracion' ?>">Configuración del perfil</a></li>	          
-	          <li class="divider"></li>
-	          <li><a href="<?php print get('webURL')._sh.'boom/saliendo' ?>">Salir sesion</a></li>
+		<div style="position:relative; left:10px;">
+			<a class="nice blue button radius" data-toggle="dropdown" href="#">
+			 <?php print SESSION('nombre').' '.SESSION('apellidos') ?> 
+		        
+		        </a>
+		    <ul class="cabecera1">
+		         <a href="<?php print get('webURL')._sh.'boom/configuracion' ?>"> <li class="cabecera1 small nice red button radius">&nbsp; Configuración del perfil</li>	</a>          
+		   
+		         <a href="<?php print get('webURL')._sh.'boom/saliendo' ?>"> <li class="cabecera1 small nice red button radius">Salir sesion</li></a>
 	        </ul>
-	      </div></a>
+	    </div></a>
 
-	      <div class="nav-collapse">
-	        <ul class="nav">
-	          <li class="active"><a href="<?php print get('webURL') . _sh . 'boom/noticias' ?>">Noticias</a></li>
-	          <li><a href="<?php print get('webURL') . _sh . 'boom/perfil' ?>">Perfil</a></li>
-	          <li><a href="<?php print get('webURL') . _sh . 'boom/amigos' ?>">Amigos</a></li>
-	          <li><a href="<?php print get('webURL') . _sh . 'boom/fotos/'.SESSION('id') ?>">Fotos</a></li>
+	    <div class="info">
+	        <ul>
+		        <li class="active cabecera1"><a href="<?php print get('webURL') . _sh . 'boom/noticias' ?>">Noticias | </a></li>
+		        <li class="cabecera1"><a href="<?php print get('webURL') . _sh . 'boom/perfil' ?>">Perfil | </a></li>
+		        <li class="cabecera1"><a href="<?php print get('webURL') . _sh . 'boom/amigos' ?>">Amigos | </a></li>
+		        <li class="cabecera1"><a href="<?php print get('webURL') . _sh . 'boom/fotos/'.SESSION('id') ?>">Fotos</a></li>
 	        </ul>
-	      </div><!--/.nav-collapse -->
-	    </div>
-	  </div>
+	    </div><!--/.nav-collapse -->
 	</div>
+	
 <?php }  else { ?>
 <div style="width: 100%; height: 200px; background: green"></div>
 <?php } ?>
+<br>

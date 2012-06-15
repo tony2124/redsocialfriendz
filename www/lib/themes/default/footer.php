@@ -11,7 +11,7 @@
 		</div>
 
 		<footer>
-			<p>&copy; <?php print __("All rights reserved"); ?> - Boom! Social Network </p>
+			<p>&copy; - Red social Frendz</p>
 		</footer>
 	  
 		</div>

@@ -7,12 +7,12 @@
 		include "mobile/content.php";
 	} else {
 ?>
-<div class="container" style="width:100%">
-	<div class="content">
-		<div class="row">
-			<div class="span3">
+<div style="width:100%">
+	<div>
+		<div>
+			<div>
 				<div class="sidebar-nav well">
-					<img src="<?php print path("www/lib/images/usuarios/".$foto['foto'],true) ?>">
+					<img src="<?php print path("www/lib/images/usuarios/".$foto['foto'],true) ?>" >
 		            <ul class="nav nav-list">
 		              <li class="nav-header">Boom!</li>
 		              <li class="active"><a href="#">Noticias</a></li>

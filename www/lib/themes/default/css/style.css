@@ -1,6 +1,20 @@
 html, body {
 	background-color: #eee;
 }
+a{
+	text-decoration:none;
+	color:black;
+}
+
+a:hover{
+	color:orange;
+}
+
+.noticias{
+	position:relative;
+	float:right;
+	margin-right:20px;
+}
 
 body {
 	padding-top: 40px;
@@ -8,6 +22,27 @@ body {
 
 .container > footer p {
 	text-align: center; 
+}
+
+.cabecera{
+	background:black;
+	height:50px;
+	width:auto;
+}
+
+
+.iniciar{
+	height:15px;
+	-webkit-transition:1s;
+}
+
+.iniciar:hover{
+	height:100px;
+	-webkit-transition:1s;
+}
+
+.cabecera1{
+	display:inline;
 }
 
 .container {
