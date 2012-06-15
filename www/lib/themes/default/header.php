@@ -36,6 +36,7 @@
 	        </ul>
 	    </div></a>
 
+
 	    <div class="info">
 	        <ul>
 		        <li class="active cabecera1"><a href="<?php print get('webURL') . _sh . 'boom/noticias' ?>">Noticias | </a></li>
