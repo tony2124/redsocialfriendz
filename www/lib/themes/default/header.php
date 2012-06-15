@@ -23,7 +23,19 @@
 		<?php if(SESSION('nombre')) { ?>
 <div class="cabecera">   
     &nbsp;<span style="color:white;"><strong>FrendZ!</strong></span>
-	  
+	  <?php 
+		if(SESSION('nombre')){
+?>
+<div style="float:right">
+	<form action="<?php print get('webURL')._sh.'/boom/buscarAmigos' ?>" method="post">
+		<input type="text" placeholder="Escribe el nombre" name="amigo">
+		<input type="submit" value="Buscar" class="nice green button radius">
+	</form>
+</div>
+
+<?php 
+	} 
+?>
 		<div style="position:relative; left:10px;">
 			<a class="nice blue button radius" data-toggle="dropdown" href="#">
 			 <?php print SESSION('nombre').' '.SESSION('apellidos') ?> 
@@ -44,8 +56,10 @@
 		        <li class="cabecera1"><a href="<?php print get('webURL') . _sh . 'boom/amigos' ?>">Amigos | </a></li>
 		        <li class="cabecera1"><a href="<?php print get('webURL') . _sh . 'boom/fotos/'.SESSION('id') ?>">Fotos</a></li>
 	        </ul>
+
 	    </div><!--/.nav-collapse -->
 	</div>
+
 	
 <?php }  else { ?>
 <div style="width: 100%; height: 200px; background: green"></div>

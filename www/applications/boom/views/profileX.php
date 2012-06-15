@@ -1,21 +1,26 @@
-<?php if(isset($estado) && $estado=='amigos') { ?><h4>Deja un mensaje a tu amigo...</h4>
-<form action="<?php print get('webURL')._sh.'boom/registrandoPublicacion/'.$id_usuario ?>" method="post">
-	<textarea name="publicacion" style="width:100%" placeholder="¿Cuál es tu estado de ánimo?..."></textarea>
-	<p>
-		<input type="submit" class="pull-right btn btn-primary btn-large" value="Publicar">
-	</p>
-	<p>&nbsp;</p>
-</form><?php } ?>
+<?php if(isset($estado) && $estado=='amigos') { ?>
+
+<center><div>
+		<h4>Dile algo a tu amigo...</h4>
+	<form action="<?php print get('webURL')._sh.'boom/registrandoPublicacion/'.$id_usuario ?>" method="post">
+		<textarea style="width:500px" name="publicacion" placeholder="Publica lo que piensas..."></textarea>
+		<p>
+			<input type="submit" class="nice green button radius" value="Publicar">
+		</p>
+		<p>&nbsp;</p>
+	</form><?php } ?>
+
+</div></center>
 <hr>
 
 <?php if($publicaciones == NULL) { ?>
-	<div class="alert alert-success">
-		<h3>Empieza haciendo una publicacion y busca a tus amigos</h3>
+	<div  >
+		<h3>Has una publicación a tus amigos</h3>
 	</div>
 <?php } else foreach ($publicaciones as $pub){  //print $pub['id_publicacion'].'---'.$id_usuario ?>
 
-<div class="well" style="background: #eeeeee">
-	<img style="float:left; margin: 10px;" src="<?php print path("www/lib/images/usuarios/".$pub['foto'],true) ?>" width="80" height="80"> 
+<div style="padding:30px" style="background: #eeeeee">
+	<img style="float:left; margin: 10px; " src="<?php print path("www/lib/images/usuarios/".$pub['foto'],true) ?>" width="80" height="80"> 
 	<div style="foat:left">
 		<?php print '<a href="'.get('webURL')._sh.'boom/perfil/'.$pub['id_usuario'].'">'.$pub['nombre'].' '.$pub['apellidos'].'</a><br>'.$pub['texto_publicacion'] ?>
 	</div>
@@ -29,16 +34,13 @@
 		}
 			
 	} ?>
-	<div>A <?php print $lks ?> personas les gusta esto :D</div>
+	<div>A <?php print $lks ?> personas les gusta</div>
 	<div>
 		<?php if(isset($estado) && $estado=='amigos') if($usuario == false){ ?>
-		 <a class="btn btn-success btn-mini" href="<?php print get('webURL')._sh.'boom/like/'.$pub['id_publicacion']._sh.$id_usuario ?>">Me gusta</a>&nbsp;
+		 <a class="nice black button radius" href="<?php print get('webURL')._sh.'boom/like/'.$pub['id_publicacion']._sh.$id_usuario ?>">Me gusta</a>&nbsp;
 			<?php }else{ ?>
-	     <a class="btn btn-danger btn-mini" href="<?php print get('webURL')._sh.'boom/noLike/'.$pub['id_publicacion']._sh.$id_usuario ?>">Ya no me gusta</a>
+	     <a class="nice black button radius" href="<?php print get('webURL')._sh.'boom/noLike/'.$pub['id_publicacion']._sh.$id_usuario ?>">Ya no me gusta</a>
 		<?php } ?>
-	</div>
-	<div style="font-size: 9px;">
-		<i>Publicado el <?php print $pub['fecha_publicacion'] ?> a las <?php print $pub['hora_publicacion'] ?></i>
 	</div>
 
 	<hr style="border-top: 1px solid yellow">
@@ -47,12 +49,9 @@
 	<div class="well">
 		<img style="float:left; margin-left: 10px; margin-right: 10px" src="<?php print get('webURL')._sh.'www/lib/images/usuarios/'.$com['foto'] ?>" width="80" height="80"> 
 		<div style="foat:left">
-			<?php print '<a href="'.get('webURL')._sh.'boom/perfil/'.$com['id_usuario'].'">'.$com['nombre'].' '.$com['apellidos'].'</a><br>'. $com['texto_comentario'] ?>
+			<?php print '<a href="'.get('webURL')._sh.'/boom/perfil/'.$com['id_usuario'].'">'.$com['nombre'].' '.$com['apellidos'].'</a><br>'. $com['texto_comentario'] ?>
 		</div>
 		<hr>
-		<div style="font-size: 9px;">
-			<i>Publicado el <?php print $com['fecha_comentario'] ?> a las <?php print $com['hora_comentario'] ?></i>
-		</div>
 	</div>
 		<?php } ?>
 	<!--formulario COMENTAR -->
@@ -64,12 +63,12 @@
 		<input type="hidden" name="publicacion" value="<?php print $pub['id_publicacion'] ?>">
 		</div>
 		<p>
-			<input type="submit" class="pull-right btn btn-primary btn-large" value="Comentar">
+			<input type="submit" class="nice green button radius" value="Comentar">
 		</p>
 		<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
 	</form>
 	<?php }else{ ?>
-Tienen que ser amigos para poder compartir ideas.
+Deben de ser amigos para compartir opiniones.
 <?php } ?>
 </div>
 

@@ -1,16 +1,21 @@
-<h4>Publica lo que estás pensando...</h4>
-<form action="<?php print get('webURL')._sh.'boom/registrandoPublicacion/'.SESSION('id') ?>" method="post">
-	<textarea name="publicacion" style="width:100%" placeholder="¿Cuál es tu estado de ánimo?..."></textarea>
-	<p>
-		<input type="submit" class="pull-right btn btn-primary btn-large" value="Publicar">
-	</p>
-	<p>&nbsp;</p>
-</form>
+
+<center><div>
+	<h4>¿Qué piensas?...</h4>
+	<form action="<?php print get('webURL')._sh.'boom/registrandoPublicacion/'.SESSION('id') ?>" method="post">
+		<textarea style="width:500px" name="publicacion" placeholder="¿Cuál es tu estado de ánimo?..."></textarea>
+		<p>
+			<input type="submit" class="nice green button radius" value="Publicar">
+		</p>
+		<p>&nbsp;</p>
+	</form>
+
+</div></center>
+
 <hr>
 
 <?php if($publicaciones == NULL) { ?>
 	<div class="alert alert-success">
-		<h3>Empieza haciendo una publicacion y busca a tus amigos</h3>
+		<h3>Has publicaciones y busca amigos</h3>
 	</div>
 <?php } else foreach ($publicaciones as $publi) foreach ($publi as $pub) { ?>
 
@@ -29,17 +34,15 @@
 		}
 			
 	} ?>
-	<div>A <?php print $lks ?> personas les gusta esto</div>
+	<div>A <?php print $lks ?> personas les gusta</div>
 	<div>
 		<?php if($usuario == false){ ?>
-		 <a class="btn btn-success btn-mini" href="<?php print get('webURL')._sh.'boom/like/'.$pub['id_publicacion'] ?>">Me gusta</a>&nbsp;
+		 <a class="nice black button radius" href="<?php print get('webURL')._sh.'boom/like/'.$pub['id_publicacion'] ?>">Me gusta</a>&nbsp;
 			<?php }else{ ?>
-	     <a class="btn btn-danger btn-mini" href="<?php print get('webURL')._sh.'boom/noLike/'.$pub['id_publicacion'] ?>">Ya no me gusta</a>
+	     <a class="nice black button radius" href="<?php print get('webURL')._sh.'boom/noLike/'.$pub['id_publicacion'] ?>">Ya no me gusta</a>
 		<?php } ?>
 	</div>
-	<div style="font-size: 9px;">
-		<i>Publicado el <?php print $pub['fecha_publicacion'] ?> a las <?php print $pub['hora_publicacion'] ?></i>
-	</div>
+	
 
 	<hr style="border-top: 1px solid yellow">
 	<?php if($comentarios!=NULL) foreach ($comentarios as $com) if($com['id_publicacion'] == $pub['id_publicacion']){ ?>
@@ -50,9 +53,7 @@
 			<?php print '<a href="'.get('webURL')._sh.'boom/perfil/'.$com['id_usuario'].'">'.$com['nombre'].' '.$com['apellidos'].'</a><br>'. $com['texto_comentario'] ?>
 		</div>
 		<hr>
-		<div style="font-size: 9px;">
-			<i>Publicado el <?php print $com['fecha_comentario'] ?> a las <?php print $com['hora_comentario'] ?></i>
-		</div>
+		
 	</div>
 		<?php } ?>
 	<!--formulario COMENTAR -->
@@ -63,7 +64,7 @@
 		<input type="hidden" name="publicacion" value="<?php print $pub['id_publicacion'] ?>">
 		</div>
 		<p>
-			<input type="submit" class="pull-right btn btn-primary btn-large" value="Comentar">
+			<input type="submit" class="nice green button radius" value="Comentar">
 		</p>
 		<p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
 	</form>

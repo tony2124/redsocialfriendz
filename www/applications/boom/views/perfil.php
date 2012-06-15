@@ -1,18 +1,18 @@
 <center><div style="position:relative; top:50px;">
-<h4>¿Qué estás pensando?</h4>
-<form action="<?php print get('webURL')._sh.'boom/registrandoPublicacion/'.SESSION('id') ?>" method="post">
-	<textarea style="width:500px" name="publicacion" placeholder="¿Cuál es tu estado de ánimo?..."></textarea>
-	<p>
-		<input type="submit" class="nice green button radius" value="Publicar">
-	</p>
-	<p>&nbsp;</p>
-</form>
+	<h4>¿Qué estás pensando?</h4>
+	<form action="<?php print get('webURL')._sh.'boom/registrandoPublicacion/'.SESSION('id') ?>" method="post">
+		<textarea style="width:500px" name="publicacion" placeholder="¿Cuál es tu estado de ánimo?..."></textarea>
+		<p>
+			<input type="submit" class="nice green button radius" value="Publicar">
+		</p>
+		<p>&nbsp;</p>
+	</form>
 
 </div></center>
 <hr>
 
 <?php if($publicaciones == NULL) { ?>
-	<div class="alert alert-success">
+	<div>
 		<h3>Has una publicación y busca amigos...</h3>
 	</div>
 <?php } else foreach ($publicaciones as $pub) {  //print $pub['id_publicacion'].'---'.$id_usuario ?>

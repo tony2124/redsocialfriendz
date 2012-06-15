@@ -8,37 +8,29 @@
 	} else {
 ?>
 <div style="width:100%">
-	<div>
-		<div>
 			<div>
-				<div class="sidebar-nav well">
-					<img src="<?php print path("www/lib/images/usuarios/".$foto['foto'],true) ?>" >
-		            <ul class="nav nav-list">
-		              <li class="nav-header">Boom!</li>	 
-		              <li><a href="<?php print get('webURL') . _sh . 'boom/fotos/'.$foto['id_usuario'] ?>">Fotos</a></li>       
-		              <li class="nav-header">Amigos de <?php print strtoupper($foto['nombre']) ?></li>
-		                <?php if($amigos!=NULL) foreach ($amigos as $amigo ) { ?>
-		              		<a href="<?php print get('webURL')._sh.'boom/perfil/'.$amigo['id_usuario'] ?>"><img style="margin-left: 5px; margin-top: 5px;" src="<?php print get('webURL')._sh.'www/lib/images/usuarios/'.$amigo['foto'] ?>" width="40" height="40">	</a>
-		              <?php } ?>
-		            </ul>
+				<div style="padding:20px; float:left" >
+					<img  width="200" height="200" src="<?php print path("www/lib/images/usuarios/".$foto['foto'],true) ?>" >
+		          
 		          </div><!--/.well -->
 			</div>
-		    <div class="span9">
-		     	<h3><a href="<?php print get('webURL').'boom/perfil/'.$id_usuario ?>"><?php print $foto['nombre'].' '.$foto['apellidos'] ?></a></h3>
-				<h4>Vive en: <?php print $foto['lugar'] ?>
-		     	<h4>Escuela: <?php print $foto['estudio'] ?>
+
+			<div class="noticias">
+				<h4><a href="<?php print get('webURL').'/boom/perfil/'.$id_usuario ?>"><?php print $foto['nombre'].' '.$foto['apellidos'] ?></a></h3>
+				<h5><?php print $foto['lugar'] ?>
+		     	<h5><?php print $foto['estudio'] ?>
 		     		<br><br>
 		     	<?php if(isset($estado))
 		     	{ 
 		     		switch($estado)
 		     		{
-		     			case 'amigos': print 'SON AMIGOS'; break;
+		     			case 'amigos': print 'Amigos'; break;
 		     			case 'enviada': print 'SOLICITUD ENVIADA'; break;
 		     			case 'aceptar': ?> 
 		     				<a href="<?php print get('webURL')._sh.'boom/aceptarSolicitud/'.$foto['id_usuario'] ?>" class="btn btn-success btn-mini">Aceptar solicitud de amistad</a>
 		     				<?php break;
 		     		}
-		     	
+		     	echo "</div></div>";
 		     	}
 		     	else
 		     	{ 
@@ -50,5 +42,6 @@
 		     	<br><br>
 				<?php $this->load(isset($view) ? $view : NULL, TRUE); ?>
 			</div>
+</div>
 
 <?php } ?>

@@ -11,8 +11,8 @@
 	<div >
 		<div >
 			<div >
-				<div class="sidebar-nav well">
-					<div style="float:left; margin-left:40px;">
+				<div>
+					<div style="float:left; margin-left:40px; padding:10px">
 					&nbsp;<a href="<?php print get('webURL')._sh.'boom/configuracion' ?>">Cambia tu foto</a><br>
 					<img src="<?php print path("www/lib/images/usuarios/".SESSION('foto'),true) ?>" width="200" height="200"><br>
 
